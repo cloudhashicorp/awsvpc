@@ -16,7 +16,7 @@ pipeline {
         TF_IN_AUTOMATION = "true"
         PATH = "$TF_HOME:$PATH"
         ACCESS_KEY = credentials('AKIAYEEL6C74T6VYR2HZ')
-        SECRET_KEY = credentials('error')
+        SECRET_KEY = credentials('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')
     }
     stages {
             stage('TerraformInit'){
