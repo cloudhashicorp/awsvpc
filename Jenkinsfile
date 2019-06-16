@@ -14,7 +14,7 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'sudo rm -r *;sudo git clone https://github.com/cloudhashicorp/awsvpc.git'
+                sh sudo git clone https://github.com/cloudhashicorp/awsvpc.git'
             }
         }
         stage('terraform init') {
