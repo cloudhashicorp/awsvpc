@@ -22,7 +22,7 @@ pipeline {
             stage('TerraformInit'){
             steps {
                
-                    sh "terraform init -input=false"
+                    sh "terraform init -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY' "
                     sh "echo \$PWD"
                     sh "whoami"
                
