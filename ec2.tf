@@ -4,30 +4,12 @@ provider "aws" {
   secret_key = "${var.secret_key}"
 }
 
-data "aws_ami" "ubuntu" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"]
-}
-
 resource "aws_instance" "web" {
-  ami           = "${data.aws_ami.ubuntu.id}"
+  ami           = "ami-0c6b1d09930fac512"
   instance_type = "t2.micro"
+  associate_public_ip_address = true
 
   tags {
     Name = "HelloWorld"
   }
-}
-output "ip"{
-value= "${aws_instance.web.public_ip}"
 }
