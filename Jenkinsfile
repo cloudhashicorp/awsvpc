@@ -4,10 +4,7 @@ pipeline {
             label 'master'
         }
     }
-    environment {
-        ACCESS_KEY = credentials('AKIA3J5DLXJWF2MWHSPF')
-        SECRET_KEY = credentials('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')
-    }
+ 
 
     stages {
 
@@ -25,13 +22,13 @@ pipeline {
         stage('terraform init') {
             steps {
            
-                 sh "terraform init -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY'"
+                 sh "terraform init"
             }
         }
         stage('terraform plan') {
             steps {
             
-                sh "terraform plan -var 'access_key=$ACCESS_KEY' -var 'secret_key=$SECRET_KEY'"
+                sh "terraform plan"
             }
         }
         stage('terraform ended') {
