@@ -14,6 +14,7 @@ pipeline {
         }
         stage('git clone') {
             steps {
+                sh 'cd /home/ec2-user/'
                 sh 'sudo git clone https://github.com/cloudhashicorp/awsvpc.git'
             }
         }
