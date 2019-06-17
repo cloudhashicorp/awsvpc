@@ -21,14 +21,16 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                  dir('/home/ec2-user/')
+                dir('/home/ec2-user/'){
                  sh 'terraform init -input=false'
+                }
             }
         }
         stage('terraform plan') {
             steps {
-                dir('/home/ec2-user/')
+                dir('/home/ec2-user/') {
                 sh 'terraform plan inut=false'
+                }
             }
         }
         stage('terraform ended') {
