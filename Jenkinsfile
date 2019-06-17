@@ -22,7 +22,7 @@ pipeline {
         stage('terraform init') {
             steps {
                 //dir('/home/ec2-user/'){
-                 sh 'sudo /home/ec2-user/terraform init ./jenkins'
+                 sh "sudo '/home/ec2-user/terraform init' ./jenkins"
                 //}
             }
         }
