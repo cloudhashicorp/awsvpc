@@ -22,13 +22,13 @@ pipeline {
         stage('terraform init') {
             steps {
            
-                 sh "terraform init"
+                 sh 'terraform init -input=false'
             }
         }
         stage('terraform plan') {
             steps {
             
-                sh "terraform plan"
+                sh 'terraform plan inut=false'
             }
         }
         stage('terraform ended') {
