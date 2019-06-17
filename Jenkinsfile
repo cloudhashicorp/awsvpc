@@ -15,19 +15,19 @@ pipeline {
         stage('git clone') {
             steps {
               
-                sh 'sudo rm -r -f *;sudo git clone https://github.com/cloudhashicorp/awsvpc.git'
+                sh 'sudo rm -r -f *;sudo git clone https://github.com/cloudhashicorp/awsvpc.git /home/ec2-user'
             }
         }
         stage('terraform init') {
             steps {
                
-                 sh 'sudo /home/ec2-user/terraform init ./jenkins'
+                 sh 'sudo "/home/ec2-user/terraform init" ./jenkins'
             }
         }
         stage('terraform plan') {
             steps {
             
-                sh 'ls ./jenkins; sudo /home/ec2-user/terraform plan ./jenkins'
+                sh 'ls ./jenkins; sudo "/home/ec2-user/terraform plan" ./jenkins'
             }
         }
         stage('terraform ended') {
