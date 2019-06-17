@@ -21,13 +21,13 @@ pipeline {
         stage('terraform init') {
             steps {
                
-                 sh 'sudo /home/ec2-user/terraform init'
+                 sh 'sudo terraform init'
             }
         }
         stage('terraform plan') {
             steps {
             
-                sh 'sudo /home/ec2-user/terraform plan'
+                sh 'sudo terraform plan'
             }
         }
         stage('terraform ended') {
