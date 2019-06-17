@@ -19,12 +19,14 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh 'sudo /home/ec2-user/terraform init ./jenkins'
+                sh 'cd  /home/ec2-user/'
+                sh 'sudo terraform init'
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'ls ./jenkins; sudo /home/ec2-user/terraform plan ./jenkins'
+                sh 'cd  /home/ec2-user/'
+                sh 'sudo terraform plan'
             }
         }
         stage('terraform ended') {
