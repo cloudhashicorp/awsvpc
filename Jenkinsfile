@@ -22,15 +22,15 @@ pipeline {
         stage('terraform init') {
             steps {
                 //dir('/home/ec2-user/'){
-                 sh "sudo '/home/ec2-user/terraform init' ./jenkins"
+                 sh "terraform init"
                 //}
             }
         }
         stage('terraform plan') {
             steps {
-                dir('/home/ec2-user/') {
-                sh 'terraform plan inut=false'
-                }
+            
+                sh "terraform plan inut=false"
+                
             }
         }
         stage('terraform ended') {
